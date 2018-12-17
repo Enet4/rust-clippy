@@ -168,7 +168,8 @@ declare_clippy_lint! {
 
 /// **What it does:** Checks for transmutes from an integer to a float.
 ///
-/// **Why is this bad?** This might result in an invalid in-memory representation of a float.
+/// **Why is this bad?** `from_bits` does not require `unsafe` and is less
+/// error-prone than `transmute`.
 ///
 /// **Known problems:** None.
 ///
